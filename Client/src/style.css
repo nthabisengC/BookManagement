@@ -1,0 +1,12 @@
+h1 {
+  font-family: Lato;
+  font-weight: bold;
+  text-align: center;
+
+  }
+  button,
+  .button {
+    margin-bottom: 0 !important;
+    margin-right: 0.5rem;
+  }
+  
