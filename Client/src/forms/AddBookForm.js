@@ -9,6 +9,11 @@ const AddBookForm = props => {
     setBook({ ...book, [name]: value });
   };
 
+  const addBook = book => {
+    book.id = books.length + 1;
+    setBooks([...books, book]);
+  };
+
   return (
     <div>
       <form

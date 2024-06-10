@@ -3,16 +3,16 @@ import BookTable from "./table/BookTable";
 import AddBookForm from "./forms/AddBookForm";
 import EditBookForm from "./forms/EditBookForm";
 
-
 const App = () => {
   // Data
   const booksData = [
     { id: 1, name: "Bright and Tender Dark", description: "Filling a gaping hole in menopause care, everything a woman needs to know to thrive during her hormonal transition and beyond, as well as the tools to help her take charge of her health at this pivotal life stage", author: "Joanna Pearson"},
     { id: 2, name: "American Diva", description: "A shifting, increasingly loaded term, it has been used to both deride and celebrate charismatic and unapologetically fierce performers like Aretha Franklin, Divine, and the women of Labelle.", author: "Deborah Paredez" },
-    { id: 3, name: "Crazy as Hell", description: "A refreshing, insightful, sacrilegious take on African American history, Crazy as Hell explores the site of Americas greatest contradictions.", author: "Hoke S. Glover" }
+    { id: 3, name: "Crazy as Hell", description: "A refreshing, insightful, sacrilegious take on African American history, Crazy as Hell explores the site of Americas greatest contradictions.", author: "Hoke S. Glover" },
+    { id: 4, name: "Old King", description: "In the summer of 1976, Duane Oshun finds himself stranded in a remote Montana town beset by a series of strange and menacing events.", author: "Maxim Loskutoff" }
   ];
 
-  const initialFormState = { id: null, name: "", description: "", author: "",status:"" };
+  const initialFormState = { id: null, name: "", description: "", author: "" };
 
   // Setting state
   const [books, setBooks] = useState(booksData);
@@ -22,7 +22,7 @@ const App = () => {
   // CRUD operations
   const addBook = book => {
     book.id = books.length + 1;
-    setBooks([...books, books]);
+    setBooks([...books, book]);
   };
 
   const deleteBook = id => {
@@ -41,14 +41,13 @@ const App = () => {
       id: book.id,
       name: book.name,
       description: book.description,
-      author: book.author,
-      status: book.status
+      author: book.author
     });
   };
 
   return (
     <div className="container">
-      <h1 class>Manage Books</h1>
+      <h1>Manage Books</h1>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
